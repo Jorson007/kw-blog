@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>APP生命周期（iOS13以前） | Jorson的个人博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="欢迎来到Jorson的个人博客">
+    
+    <link rel="preload" href="/kw-blog/assets/css/0.styles.41f8f72f.css" as="style"><link rel="preload" href="/kw-blog/assets/js/app.b958d4e2.js" as="script"><link rel="preload" href="/kw-blog/assets/js/2.1e882bb7.js" as="script"><link rel="preload" href="/kw-blog/assets/js/19.9b09ceb8.js" as="script"><link rel="prefetch" href="/kw-blog/assets/js/10.16ab3e3f.js"><link rel="prefetch" href="/kw-blog/assets/js/11.c2fa39b1.js"><link rel="prefetch" href="/kw-blog/assets/js/12.a6ee2b4e.js"><link rel="prefetch" href="/kw-blog/assets/js/13.7801f0b4.js"><link rel="prefetch" href="/kw-blog/assets/js/14.4f9f6969.js"><link rel="prefetch" href="/kw-blog/assets/js/15.34c109c7.js"><link rel="prefetch" href="/kw-blog/assets/js/16.336c82c3.js"><link rel="prefetch" href="/kw-blog/assets/js/17.c461c0c5.js"><link rel="prefetch" href="/kw-blog/assets/js/18.672355b5.js"><link rel="prefetch" href="/kw-blog/assets/js/20.a5d0a3a0.js"><link rel="prefetch" href="/kw-blog/assets/js/21.89bf4e4e.js"><link rel="prefetch" href="/kw-blog/assets/js/22.8d895b93.js"><link rel="prefetch" href="/kw-blog/assets/js/23.c2b20fca.js"><link rel="prefetch" href="/kw-blog/assets/js/3.f163c3d7.js"><link rel="prefetch" href="/kw-blog/assets/js/4.78725ba6.js"><link rel="prefetch" href="/kw-blog/assets/js/5.3664bea7.js"><link rel="prefetch" href="/kw-blog/assets/js/6.5ec75146.js"><link rel="prefetch" href="/kw-blog/assets/js/7.c57989ef.js"><link rel="prefetch" href="/kw-blog/assets/js/8.67b977fe.js"><link rel="prefetch" href="/kw-blog/assets/js/9.2faab3a0.js">
+    <link rel="stylesheet" href="/kw-blog/assets/css/0.styles.41f8f72f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/kw-blog/" class="home-link router-link-active"><!----> <span class="site-name">Jorson的个人博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/kw-blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="https://github.com/Jorson007" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://juejin.cn/user/2163471667175549" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/kw-blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="https://github.com/Jorson007" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://juejin.cn/user/2163471667175549" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端学习</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>iOS学习</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/kw-blog/iOS/生命周期.html" class="active sidebar-link">iOS生命周期</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/kw-blog/iOS/生命周期.html#app生命周期-ios13以前" class="sidebar-link">APP生命周期（iOS13以前）</a></li><li class="sidebar-sub-header"><a href="/kw-blog/iOS/生命周期.html#app生命周期-ios13以后" class="sidebar-link">APP生命周期（iOS13以后）</a></li><li class="sidebar-sub-header"><a href="/kw-blog/iOS/生命周期.html#uiviewcontroller生命周期" class="sidebar-link">UIViewController生命周期</a></li><li class="sidebar-sub-header"><a href="/kw-blog/iOS/生命周期.html#uiview生命周期" class="sidebar-link">UIView生命周期</a></li></ul></li><li><a href="/kw-blog/iOS/模块化.html" class="sidebar-link">iOS模块化</a></li><li><a href="/kw-blog/iOS/OCLint.html" class="sidebar-link">OClint</a></li><li><a href="/kw-blog/iOS/二进制重排.html" class="sidebar-link">二进制重排</a></li><li><a href="/kw-blog/iOS/iOSAPP重签名.html" class="sidebar-link">iOS APP重签名</a></li><li><a href="/kw-blog/iOS/iOS应用瘦身.html" class="sidebar-link">iOS应用瘦身</a></li><li><a href="/kw-blog/iOS/performSelector最全解析.html" class="sidebar-link">iOS performSelector最全解析</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>swift</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flutter学习</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>算法学习</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>图像相关</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>杂七杂八</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="app生命周期-ios13以前"><a href="#app生命周期-ios13以前" class="header-anchor">#</a> APP生命周期（iOS13以前）</h2> <div class="language- extra-class"><pre class="language-text"><code>    1.点击应用程序图标
+    2.程序入口：进入Main函数
+    3.通过UIApplicationMain函数
+    4.初始化UIApplication对象并且设置代理对象AppDelegate
+    5.程序完成加载：[AppDelegate application:didFinishLaunchingWithOptions:]
+    6.创建Window窗口：UIWindow
+    7.程序被激活：[AppDelegate applicationDidBecomeActive:]
+    8.点击Home键
+    （1）程序取消激活状态：[AppDelegate applicationWillResignActive:]
+    （2）程序进入后台：[AppDelegate applicationDidEnterBackground:]
+    9.点击应用图标
+    （1）程序进入前台：[AppDelegate applicationWillEnterForeground:]
+    （2）程序被激活：[AppDelegate applicationDidBecomeActive:]
+    10.内存警告：[AppDelegate applicationDidReceiveMemoryWarning]
+    11.将要终止：[AppDelegate applicationWillTerminate]
+</code></pre></div><p><img src="https://img-blog.csdnimg.cn/img_convert/4c164c4327c1d3da5cfd6600199bebdb.png" alt="生命周期13以前"></p> <h2 id="app生命周期-ios13以后"><a href="#app生命周期-ios13以后" class="header-anchor">#</a> APP生命周期（iOS13以后）</h2> <div class="language- extra-class"><pre class="language-text"><code>    1. 点击应用程序图标
+    2. 程序入口：进入Main函数
+    3. 通过UIApplicationMain函数
+    4. 初始化UIApplication对象并且设置代理对象AppDelegate
+    5. 程序完成加载：[AppDelegate application:didFinishLaunchingWithOptions:]
+    6. 进入场景对象调用：[SceneDelegate scene:willConnectToSession:options:]方法
+    7. 程序将要进入场景：[SceneDelegate sceneWillEnterForeground:]
+    8. 场景已经激活：[SceneDelegate sceneDidBecomeActive:]
+    9. 点击Home键：
+    （1）取消场景激活状态：[SceneDelegate sceneWillResignActive:]
+    （2）程序进入后台：[SceneDelegate sceneDidEnterBackground:]
+    10. 点击图标
+    （1）程序将要进入前台：[SceneDelegate sceneWillEnterForeground:]
+    （2）程序已经被激活：[SceneDelegate sceneDidBecomeActive:]
+    11. 进入程序选择界面：[SceneDelegate sceneWillResignActive:]
+    11. 程序被杀死：[SceneDelegate sceneDidDisconnect:]
+</code></pre></div><p><img src="https://img-blog.csdnimg.cn/img_convert/ea6191b6845dc45e5fa81b63de9fc674.png" alt="生命周期13以后"></p> <h2 id="uiviewcontroller生命周期"><a href="#uiviewcontroller生命周期" class="header-anchor">#</a> UIViewController生命周期</h2> <div class="language- extra-class"><pre class="language-text"><code>    Xib或者普通.h.m:
+    1-1 initWithNibName:bundle:------初始化（xib和纯代码）,初始化控制器，可以写数据初始化操作，不要写View相关操作StoryBoard:
+    1-2 init
+
+    StoryBoard
+    1-1 initWithCoder:------初始化，不会直接初始化控制器
+    1-2 awakeFromNib------xib加载完成(xib)，一些实例化加载写在此处
+    
+    2.loadView------加载视图，默认从nib，如果nib为空则会创建一个空视图（重写时，不要写super）
+    3.viewDidLoad------视图已经加载完成（自带的View加载完成），用于初始化数据、设定、约束、移除视图等操作
+    4.viewWillAppear:------视图将要出现，用于设置设备不同方向时如何显示，状态栏方向，视图显示样式
+    5.viewWillLayoutSubviews------view将要布局子视图
+    6.viewDidLayoutSubviews------view已经布局子视图
+    7.viewDidAppear:------视图已经显示
+    8.viewWillDisappear:------视图将要消失
+    9.viewDidDisappear:------视图已经消失
+    10.didReceiveMemoryWarning------控制器出现内存警告
+    11.dealloc------视图被销毁，系统只会释放内存，不会释放对象的所有权，所以通常在这里置为nil
+</code></pre></div><h2 id="uiview生命周期"><a href="#uiview生命周期" class="header-anchor">#</a> UIView生命周期</h2> <div class="language- extra-class"><pre class="language-text"><code>    (纯代码)UIView创建为：[[UIView alloc] init];
+    1.initWithFrame:
+    2.init
+    3.layoutSubviews
+    
+    (纯代码)UIView创建为：[[UiView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    1.initWithFrame:
+    2.layoutSubviews
+    
+    (XIB)UIView创建为：NSArray *arr = [[NSBundle mainBundle] loadNibNamed:(@&quot;XHView&quot;) owner:nil option:nil];     [arr lastObject];
+    1.initWithCoder:
+    2.awakeFromNib
+    3.layoutSubviews
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/kw-blog/h5/WebRTC.html" class="prev">
+        WebRTC
+      </a></span> <span class="next"><a href="/kw-blog/iOS/模块化.html">
+        iOS模块化
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/kw-blog/assets/js/app.b958d4e2.js" defer></script><script src="/kw-blog/assets/js/2.1e882bb7.js" defer></script><script src="/kw-blog/assets/js/19.9b09ceb8.js" defer></script>
+  </body>
+</html>
